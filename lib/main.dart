@@ -13,8 +13,6 @@ class MyApp extends StatelessWidget {
       title: 'Recetas con Spoonacular',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.primaries.first,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
         textTheme: const TextTheme(
           bodyLarge: TextStyle(
             color: Colors.black,
