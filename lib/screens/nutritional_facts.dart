@@ -57,7 +57,7 @@ class _NutritionalFactsPageState extends State<NutritionalFactsPage> {
       body: Column(
         children: [
           const Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(10.0),
             child: Text(
               'Nutritional Information',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
@@ -109,7 +109,7 @@ class _NutritionalFactsPageState extends State<NutritionalFactsPage> {
       nutrientWidgets.add(
         Text(
           '${nutrient['name'] ?? 'Unknown'}: ${nutrient['amount'] ?? 'N/A'} ${nutrient['unit'] ?? 'N/A'} (${nutrient['percentOfDailyNeeds'] ?? 'N/A'}%)',
-          style: const TextStyle(fontSize: 13),
+          style: const TextStyle(fontSize: 12),
         ),
       );
     }

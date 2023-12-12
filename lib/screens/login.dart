@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:remake_simple_app/screens/recommendations.dart';
+import 'package:remake_simple_app/screens/forgot_password.dart';
+import 'package:remake_simple_app/screens/recommendations.dart'; // Import the ForgotPasswordPage
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -93,33 +94,51 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _loginBtn() {
-    return ElevatedButton(
-      onPressed: () {
-        debugPrint(
-            " Username: usernameController.text${usernameController.text}");
-        debugPrint(
-            " Password: passwordController.text${passwordController.text}");
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => const RecommendationsScreen(
-                    searchQuery: '',
-                  )),
-        );
-      },
-      style: ElevatedButton.styleFrom(
-        shape: const StadiumBorder(),
-        backgroundColor: Colors.white,
-        padding: const EdgeInsets.symmetric(vertical: 16),
-      ),
-      child: const SizedBox(
-        width: double.infinity,
-        child: Text(
-          "Sign In",
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 20),
+    return Column(
+      children: [
+        ElevatedButton(
+          onPressed: () {
+            debugPrint(
+                " Username: usernameController.text${usernameController.text}");
+            debugPrint(
+                " Password: passwordController.text${passwordController.text}");
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const RecommendationsScreen(
+                  searchQuery: '',
+                ),
+              ),
+            );
+          },
+          style: ElevatedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(18.0),
+            ),
+            backgroundColor: Colors.white,
+            padding: const EdgeInsets.symmetric(vertical: 16),
+          ),
+          child: const Text(
+            "Sign In",
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 16),
+          ),
         ),
-      ),
+        const SizedBox(height: 10),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
+            );
+          },
+          child: const Text(
+            "I forgot my password",
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 16, color: Colors.white),
+          ),
+        ),
+      ],
     );
   }
 }
