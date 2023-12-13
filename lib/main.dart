@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:remake_simple_app/screens/landing.dart';
 
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
